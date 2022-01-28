@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9193028157199506125}
   - component: {fileID: 6741474326627041754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 1306999411136379547}
   - component: {fileID: -5790436434643319237}
   - component: {fileID: 1399094817097914688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7041236615870374747}
   - component: {fileID: 7041236615870374746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
