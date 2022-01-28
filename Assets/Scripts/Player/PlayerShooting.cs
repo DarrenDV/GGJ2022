@@ -12,11 +12,14 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(1))
         {
-            if(ammo > 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                Shoot();
+                if (ammo > 0)
+                {
+                    Shoot();
+                }
             }
         }
     }
