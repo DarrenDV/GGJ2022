@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawnpoint
   - Enemy
+  - Hazard
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,10 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Walls
+    uniqueID: 3233190669
+    locked: 0
+  - name: Hazards
+    uniqueID: 1772293001
     locked: 0
