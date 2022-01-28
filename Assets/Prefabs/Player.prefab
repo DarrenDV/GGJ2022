@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 7153160919574068084}
   - component: {fileID: 1306999411136379547}
   - component: {fileID: 7312473429594546887}
+  - component: {fileID: -5629556572832356388}
   - component: {fileID: 7041236615745058873}
   - component: {fileID: 7456314997464555756}
   m_Layer: 7
@@ -316,6 +317,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &-5629556572832356388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041236615745058874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1788dda4afee8c6439c607fac0cab284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenSaves: 0.33
+  mimicEnemy: {fileID: 8525346415371815532, guid: bdd78a927bc95be4a80d9743bd971dee, type: 3}
+  hasJustShot: 0
 --- !u!50 &7041236615745058873
 Rigidbody2D:
   serializedVersion: 4
