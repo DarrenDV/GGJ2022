@@ -29,6 +29,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
+        gameObject.GetComponent<PlayerLocations>().hasJustShot = true;
         //Shoot bullet towards mouse pos
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = playerGun.transform.position;
@@ -36,6 +37,5 @@ public class PlayerShooting : MonoBehaviour
         rb.AddForce(playerGun.transform.up * bulletForce, ForceMode2D.Impulse);
 
         ammo--;
-
     }
 }

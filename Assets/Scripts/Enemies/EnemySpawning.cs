@@ -19,14 +19,13 @@ public class EnemySpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void SpawnEnemy()
     {
         int amountOfSpawnPoints = spawns.Length;
         int spawnIndex = Random.Range(0, amountOfSpawnPoints);
-        GameObject enemy = Instantiate(meleeEnemyPrefab);
-        enemy.transform.position = spawns[spawnIndex].transform.position;
+        Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
     }
 }
