@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1635654204412120958}
   - component: {fileID: 3615603701141505812}
   - component: {fileID: 61446933}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Atract enemies collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9193028157199506125}
   - component: {fileID: 6741474326627041754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 7312473429594546887}
   - component: {fileID: 7041236615745058873}
   - component: {fileID: 7456314997464555756}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7041236615870374747}
   - component: {fileID: 7041236615870374746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}

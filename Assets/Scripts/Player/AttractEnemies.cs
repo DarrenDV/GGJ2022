@@ -20,17 +20,17 @@ public class AttractEnemies : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "MeleeEnemy")
         {
-            collision.gameObject.GetComponent<EnemyMovement>().chasePlayer = true;
+            collision.gameObject.GetComponent<MeleeEnemyMovement>().chasePlayer = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "MeleeEnemy")
         {
-            collision.gameObject.GetComponent<EnemyMovement>().chasePlayer = false;
+            collision.gameObject.GetComponent<MeleeEnemyMovement>().chasePlayer = false;
         }
     }
 }
