@@ -18,7 +18,10 @@ public class PlayerShooting : MonoBehaviour
             {
                 if (ammo > 0)
                 {
-                    Shoot();
+                    if (!gameObject.GetComponent<PlayerMelee>().isMeleeing)
+                    {
+                        Shoot();
+                    }
                 }
             }
         }

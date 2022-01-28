@@ -8,12 +8,12 @@ public class PlayerMelee : MonoBehaviour
     [SerializeField] private float timeToLast = 1f;
     [SerializeField] private float meleeCooldown = 1f;
     private float timeUp, coolDownTimePassed;
-    private bool isMeleeing, canCoolDown;
+    public bool isMeleeing, canCoolDown;
     private bool canMelee = true;
 
     void Update()
     {
-        if (canMelee)
+        if (canMelee && !Input.GetMouseButton(1)) //No melee whilst aiming
         {
             if (Input.GetMouseButtonDown(0))
             {

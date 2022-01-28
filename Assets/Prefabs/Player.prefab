@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5626968964167318282, guid: 99e181a410034ed40a26a09c5233f7f7, type: 3}
   playerGun: {fileID: 7041236615870374748}
-  bulletForce: 20
+  bulletForce: 10
   ammo: 5
 --- !u!114 &1306999411136379547
 MonoBehaviour:
@@ -347,6 +347,8 @@ MonoBehaviour:
   playerMelee: {fileID: 5691823707928950379}
   timeToLast: 1
   meleeCooldown: 1
+  isMeleeing: 0
+  canCoolDown: 0
 --- !u!1 &7041236615870374748
 GameObject:
   m_ObjectHideFlags: 0
