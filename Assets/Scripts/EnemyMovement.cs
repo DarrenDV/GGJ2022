@@ -15,11 +15,14 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        Vector3 dest = new Vector3(player.transform.position.x + Random.Range(-5f, 5f), player.transform.position.y + Random.Range(-5f, 5f), player.transform.position.z);
+        agent.destination = dest;
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.destination = player.transform.position;
+        
     }
 }
