@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public GameObject player;
     public NavMeshAgent agent;
+
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
