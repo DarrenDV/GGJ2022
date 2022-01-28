@@ -6,8 +6,13 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
+    public bool chasePlayer = false;
 
     private GameObject player;
+    private Vector3 offset;
+    int offsetSize = 5;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +21,19 @@ public class EnemyMovement : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        Vector3 dest = new Vector3(player.transform.position.x + Random.Range(-5f, 5f), player.transform.position.y + Random.Range(-5f, 5f), player.transform.position.z);
-        agent.destination = dest;
+        offset = new Vector3(Random.Range(-offsetSize, offsetSize), Random.Range(-offsetSize, offsetSize), 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (chasePlayer == true)
+        {
+            agent.destination = player.transform.position;
+        }
+        else
+        {
+            agent.destination = player.transform.position + offset;
+        }
     }
 }

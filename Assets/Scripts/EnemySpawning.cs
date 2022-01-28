@@ -26,6 +26,7 @@ public class EnemySpawning : MonoBehaviour
     {
         int amountOfSpawnPoints = spawns.Length;
         int spawnIndex = Random.Range(0, amountOfSpawnPoints);
-        Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
+        GameObject enemy = Instantiate(meleeEnemyPrefab);
+        enemy.transform.position = spawns[spawnIndex].transform.position;
     }
 }
