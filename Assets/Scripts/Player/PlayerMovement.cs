@@ -37,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
+
+
+
+    }
+
+    private void FixedUpdate()
+    {
         if (canRotate)
         {
             //Rotate player towards mouse
@@ -46,11 +53,6 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = rotation;
         }
 
-
-    }
-
-    private void FixedUpdate()
-    {
         if (movement.x != 0 && movement.y != 0)
         {
             movement *= diagonalSlowDown;
