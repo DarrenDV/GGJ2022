@@ -1303,11 +1303,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782271644}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1988756318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7041236615745058874, guid: a3a62d055a45bc24e822354e3e25e908, type: 3}
-  m_PrefabInstance: {fileID: 593465944}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6420247654011091309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1359,10 +1354,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6420247654316760667, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1988756318}
     - target: {fileID: 6420247654316760671, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
       propertyPath: m_Name
       value: MeleeEnemy

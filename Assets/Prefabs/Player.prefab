@@ -175,11 +175,15 @@ GameObject:
   - component: {fileID: 7041236615745058870}
   - component: {fileID: 7041236615745058871}
   - component: {fileID: 7041236615745058872}
-  - component: {fileID: 7041236615745058873}
-  - component: {fileID: 7041236615745058869}
   - component: {fileID: 7153160919574068084}
   - component: {fileID: 1306999411136379547}
+<<<<<<< HEAD
   - component: {fileID: 3754649896316331385}
+=======
+  - component: {fileID: 7312473429594546887}
+  - component: {fileID: 7041236615745058873}
+  - component: {fileID: 7456314997464555756}
+>>>>>>> 7d42cdafa406b6129d840a8a1d5d3a2f1b348ba2
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -270,6 +274,52 @@ MonoBehaviour:
   moveSpeed: 5
   diagonalSlowDown: 0.7
   rb: {fileID: 7041236615745058873}
+--- !u!114 &7153160919574068084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041236615745058874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a475c1a31932a4aa50e4964fa53dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5626968964167318282, guid: 99e181a410034ed40a26a09c5233f7f7, type: 3}
+  playerGun: {fileID: 7041236615870374748}
+  bulletForce: 10
+  ammo: 5
+--- !u!114 &1306999411136379547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041236615745058874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f0ec64f29f41f429f7f4c3538fcf1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMelee: {fileID: 5691823707928950379}
+  timeToLast: 1
+  meleeCooldown: 1
+  isMeleeing: 0
+  canCoolDown: 0
+--- !u!114 &7312473429594546887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041236615745058874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1f886b4f13fd84a95b9ffb056f6eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!50 &7041236615745058873
 Rigidbody2D:
   serializedVersion: 4
@@ -291,8 +341,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &7041236615745058869
-BoxCollider2D:
+--- !u!58 &7456314997464555756
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -305,16 +355,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7153160919574068084
@@ -365,6 +407,9 @@ MonoBehaviour:
   timeBetweenSaves: 0.33
   positions: []
   mimicEnemy: {fileID: 8525346415371815532, guid: bdd78a927bc95be4a80d9743bd971dee, type: 3}
+=======
+  m_Radius: 0.5
+>>>>>>> 7d42cdafa406b6129d840a8a1d5d3a2f1b348ba2
 --- !u!1 &7041236615870374748
 GameObject:
   m_ObjectHideFlags: 0
