@@ -26,11 +26,17 @@ public class PlayerLocations : MonoBehaviour
             saveTime = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            GiveToEnemy();
-            moments = new List<MomentData>();
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    GiveToEnemy();
+        //    moments = new List<MomentData>();
+        //}
+    }
+
+    public void SpawnMimic()
+    {
+        GiveToEnemy();
+        moments = new List<MomentData>();
     }
 
     public void GiveToEnemy()

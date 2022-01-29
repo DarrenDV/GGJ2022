@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float health = 100;
     [SerializeField] Animator _animator;
     [SerializeField] private CircleCollider2D col;
+    [SerializeField] private GameObject particleSystem;
+    [SerializeField] private float lerpToKillerWaitTime = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +28,15 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            GetComponent<AudioSource>().Play(); 
+            GetComponent<AudioSource>().Play();
             //death shit
+
+            //Lock rotation of user needs to be set to true again after
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<FlippingPlayerSprite>().enabled = false;
+
+            particleSystem.SetActive(true);
+            GetComponent<ParticlesTowardEnemy>().StartEffect(killer);
 
             // Death Animation
             _animator.SetTrigger("Death");
@@ -69,7 +78,8 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator LerpToKiller(GameObject killer)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(lerpToKillerWaitTime);
+        GetComponent<ParticlesTowardEnemy>().StopEffect();
         Vector2 startPos = transform.position;
         Vector2 lerpPos = killer.transform.position;
         float elapsed = 0;
@@ -81,5 +91,11 @@ public class PlayerHealth : MonoBehaviour
             yield return null;
         }
         transform.position = lerpPos;
+
+        yield return new WaitForSeconds(1f);
+        killer.GetComponent<EnemyHealth>().TakeDamage(500);
+
+        GetComponent<PlayerLocations>().SpawnMimic();
+
     }
 }

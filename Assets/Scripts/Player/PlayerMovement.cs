@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canRotate = true;
 
+    public bool rotateLocked = false;
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -20,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
             if (hit.collider.gameObject.name == "Player")
             {
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = rotation;
+
         }
 
         if (movement.x != 0 && movement.y != 0)
