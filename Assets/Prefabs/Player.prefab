@@ -379,6 +379,7 @@ MonoBehaviour:
   timeBetweenSaves: 0.33
   mimicEnemy: {fileID: 8525346415371815532, guid: bdd78a927bc95be4a80d9743bd971dee, type: 3}
   hasJustShot: 0
+  hasJustMeleed: 0
 --- !u!1 &7041236615870374748
 GameObject:
   m_ObjectHideFlags: 0
