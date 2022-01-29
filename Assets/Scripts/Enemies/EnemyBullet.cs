@@ -8,6 +8,8 @@ public class EnemyBullet : MonoBehaviour
     private float timeAlive;
     private float bulletDamage = 50f;
 
+    public GameObject shotBy;
+
     private void Update()
     {
         timeAlive += Time.deltaTime;
@@ -21,7 +23,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage, shotBy);
             Debug.Log("Hit:" + collision.gameObject.name);
             Destroy(this.gameObject);
         }

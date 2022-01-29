@@ -84,6 +84,7 @@ public class RangedEnemyMovement : MonoBehaviour
     void Fire()
     {
         GameObject bullet = Instantiate(bulletPrefab);
+        bullet.GetComponent<EnemyBullet>().shotBy = this.gameObject;
         bullet.transform.position = transform.position;
         Vector2 dir = (player.transform.position - transform.position).normalized;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();

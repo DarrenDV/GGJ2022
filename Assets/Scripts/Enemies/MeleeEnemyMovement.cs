@@ -39,5 +39,7 @@ public class MeleeEnemyMovement : MonoBehaviour
                 agent.destination = player.transform.position + offset;
             }
         }
+
+        //GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 }
