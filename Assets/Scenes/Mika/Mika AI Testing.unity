@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6420247654316760671, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
@@ -1133,11 +1133,11 @@ GameObject:
   - component: {fileID: 1477616417}
   m_Layer: 0
   m_Name: Spawnpoints
-  m_TagString: Untagged
+  m_TagString: SpawnParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1477616416
 Transform:
   m_ObjectHideFlags: 0
@@ -1169,6 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeEnemyPrefab: {fileID: 6420247654316760671, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
   spawns: []
+  enemies: []
 --- !u!1 &1557769478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5543871429611398885, guid: 3b75f4aad885c33488df5f72ab4a59bc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b75f4aad885c33488df5f72ab4a59bc, type: 3}
