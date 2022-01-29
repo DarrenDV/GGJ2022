@@ -96,6 +96,7 @@ public class RangedEnemyMovement : MonoBehaviour
 
         // Rotates bullet into right direction
         bullet.transform.right = player.transform.position - transform.position;
+        bullet.transform.eulerAngles = new Vector3(0, 0, bullet.transform.rotation.eulerAngles.z);
 
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(dir * 20, ForceMode2D.Impulse);
