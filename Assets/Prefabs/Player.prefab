@@ -5983,6 +5983,7 @@ MonoBehaviour:
   moveSpeed: 5
   diagonalSlowDown: 0.7
   rb: {fileID: 7041236615745058873}
+  rotateLocked: 0
 --- !u!50 &7041236615745058873
 Rigidbody2D:
   serializedVersion: 4
@@ -6003,7 +6004,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7153160919574068084
 MonoBehaviour:
   m_ObjectHideFlags: 0
