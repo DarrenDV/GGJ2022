@@ -11,7 +11,7 @@ public class PlayerLocations : MonoBehaviour
 
     [SerializeField] private GameObject mimicEnemy;
 
-    public bool hasJustShot;
+    public bool hasJustShot, hasJustMeleed;
 
     void Update()
     {
@@ -19,9 +19,10 @@ public class PlayerLocations : MonoBehaviour
         
         if(saveTime > timeBetweenSaves)
         {
-            moments.Add(new MomentData(transform.position, transform.rotation, hasJustShot));
+            moments.Add(new MomentData(transform.position, transform.rotation, hasJustShot, hasJustMeleed));
 
             hasJustShot = false;
+            hasJustMeleed = false;
             saveTime = 0;
         }
 
