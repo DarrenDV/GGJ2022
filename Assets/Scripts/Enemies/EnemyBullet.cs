@@ -6,6 +6,7 @@ public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private float timeToDestroy = 5f;
     private float timeAlive;
+    private float bulletDamage = 50f;
 
     private void Update()
     {
@@ -16,9 +17,13 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().health -= bulletDamage;
+            Debug.Log("Hit:" + collision.gameObject.name);
+            Destroy(this.gameObject);
+        }
     }
 }
