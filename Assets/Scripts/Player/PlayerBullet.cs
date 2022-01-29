@@ -6,6 +6,7 @@ public class PlayerBullet : MonoBehaviour
 {
     [SerializeField] private float timeToDestroy = 5f;
     private float timeAlive;
+    private float bulletDamage = 150f;
 
     private void Update()
     {
@@ -16,9 +17,19 @@ public class PlayerBullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            Debug.Log("Hit:" + collision.gameObject.name);
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "MeleeEnemyHitbox")
+        {
+            collision.gameObject.transform.parent.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            Debug.Log("Hit:" + collision.gameObject.name);
+            Destroy(this.gameObject);
+        }
     }
 }

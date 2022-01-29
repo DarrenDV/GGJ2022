@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
-    public float health = 100f;
-
+    [SerializeField] private float health = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +15,14 @@ public class PlayerStatus : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MeleeEnemyAttack : MonoBehaviour
 {
-    bool attackOnCooldown = false;
-    float attackCooldown = 2f;
-    float damage = 5f;
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private CircleCollider2D col;
+    public bool attacking = false;
+
+    private bool attackOnCooldown = false;
+    private float attackCooldown = 2f;
+    private float damage = 50f;
+    private GameObject player;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -27,10 +34,43 @@ public class MeleeEnemyAttack : MonoBehaviour
             if (attackOnCooldown == false)
             {
                 attackOnCooldown = true;
-                collision.gameObject.GetComponent<PlayerStatus>().health -= damage; 
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage); 
                 StartCoroutine(ResetCooldown());
+                StartCoroutine(LerpToPlayer());
             }
         }
+    }
+
+    IEnumerator LerpToPlayer()
+    {
+        attacking = true;
+        agent.enabled = false;
+        col.enabled = false;
+
+        float elapsed = 0;
+        float duration = 0.2f;
+
+        Vector2 startPos = transform.position;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPos, player.transform.position, elapsed / duration);
+            yield return null;
+        }
+        transform.position = player.transform.position;
+
+        elapsed = 0;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            transform.position = Vector3.Lerp(player.transform.position, startPos, elapsed / duration);
+            yield return null;
+        }
+        transform.position = startPos;
+
+        agent.enabled = true;
+        col.enabled = true;
+        attacking = false;
     }
 
     IEnumerator ResetCooldown()

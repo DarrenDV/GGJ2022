@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health;
+    [SerializeField] float health = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            //death shit
+        }
     }
 }

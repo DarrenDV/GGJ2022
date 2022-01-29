@@ -7,6 +7,7 @@ public class MeleeEnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public bool chasePlayer = false;
+    [SerializeField] private MeleeEnemyAttack meleeEnemyAttack;
 
     private GameObject player;
     private Vector3 offset;
@@ -27,13 +28,16 @@ public class MeleeEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (chasePlayer == true)
+        if (meleeEnemyAttack.attacking == false)
         {
-            agent.destination = player.transform.position;
-        }
-        else
-        {
-            agent.destination = player.transform.position + offset;
+            if (chasePlayer == true)
+            {
+                agent.destination = player.transform.position;
+            }
+            else
+            {
+                agent.destination = player.transform.position + offset;
+            }
         }
     }
 }
