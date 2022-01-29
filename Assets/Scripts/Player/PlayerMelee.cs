@@ -19,6 +19,7 @@ public class PlayerMelee : MonoBehaviour
             {
                 timeUp = 0;
                 coolDownTimePassed = 0;
+                playerMelee.GetComponent<MeleeWeapon>().canDealDamage = true;
                 gameObject.GetComponent<PlayerLocations>().hasJustMeleed = true;
                 isMeleeing = true;
                 canMelee = false;
