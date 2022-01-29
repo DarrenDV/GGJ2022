@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  deathSoundPlayer: {fileID: 0}
   _animator: {fileID: 7333268868760159440}
 --- !u!114 &-345355926948328704
 MonoBehaviour:
@@ -201,7 +202,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fa7cb680c8e32524bad44a985439f03f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c5a8e77adb68090469c2d43a485bbf76, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.05
   m_Pitch: 1

@@ -51,6 +51,7 @@ public class MeleeEnemyAttack : MonoBehaviour
         float duration = 0.2f;
 
         Vector2 startPos = transform.position;
+        GetComponent<AudioSource>().Play();
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
