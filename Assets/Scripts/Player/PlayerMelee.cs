@@ -27,6 +27,11 @@ public class PlayerMelee : MonoBehaviour
         if (isMeleeing)
         {
             playerMelee.SetActive(true);
+            if (timeUp == 0)
+            {
+                playerMelee.GetComponent<AudioSource>().Play();
+            }
+            
             timeUp += Time.deltaTime;
 
             if (timeUp > timeToLast)

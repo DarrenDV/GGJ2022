@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            GetComponent<AudioSource>().Play(); 
             //death shit
 
             // Death Animation

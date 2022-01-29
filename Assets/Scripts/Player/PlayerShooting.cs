@@ -44,6 +44,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
+        playerGun.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<PlayerLocations>().hasJustShot = true;
         //Shoot bullet towards mouse pos
         GameObject bullet = Instantiate(bulletPrefab);
