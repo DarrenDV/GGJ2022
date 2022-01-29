@@ -25,11 +25,15 @@ public class PlayerBullet : MonoBehaviour
             Debug.Log("Hit:" + collision.gameObject.name);
             Destroy(this.gameObject);
         }
-        else if (collision.gameObject.tag == "MeleeEnemyHitbox")
+        else if (collision.gameObject.tag == "MeleeEnemy")
         {
             collision.gameObject.transform.parent.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
             Debug.Log("Hit:" + collision.gameObject.name);
             Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.layer == 6)
+        {
+            Destroy(gameObject);
         }
     }
 }
