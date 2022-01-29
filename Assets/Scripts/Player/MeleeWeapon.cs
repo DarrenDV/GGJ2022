@@ -10,7 +10,7 @@ public class MeleeWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "MeleeEnemy")
+        if (other.tag == "MeleeEnemy" || other.tag == "Enemy")
         {
             if (canDealDamage)
             {
