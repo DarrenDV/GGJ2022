@@ -75,7 +75,7 @@ public class PlayerShooting : MonoBehaviour
 
     }
 
-    private void SetAmmoText()
+    public void SetAmmoText()
     {
         ammoText.text = "Ammo: " + ammo;
     }
