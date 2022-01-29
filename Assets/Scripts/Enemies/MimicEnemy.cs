@@ -6,6 +6,7 @@ public class MimicEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject mimicGun;
     [SerializeField] private GameObject enemyBulletPrefab;
+    [SerializeField] private GameObject mimicMelee;
     [SerializeField] private int bulletForce = 10; 
 
     public List<MomentData> moments = new List<MomentData>();
@@ -15,11 +16,23 @@ public class MimicEnemy : MonoBehaviour
 
     private int listStep;
 
+    private float meleeTime, timeSpentMeleeing;
+    private bool canMelee;
+
+    private void Start()
+    {
+        meleeTime = GameObject.Find("Player").GetComponent<PlayerMelee>().timeToLast;
+    }
+
     void Update()
     {
         if (canStartMoving)
         {
             Move();
+        }
+        if (canMelee)
+        {
+            Melee();
         }
     }
 
@@ -43,6 +56,16 @@ public class MimicEnemy : MonoBehaviour
                 {
                     Shoot();
                     fireOnce = false;
+                }
+            }
+            if (moments[listStep].hasMeleed)
+            {
+                bool meleeOnce = true;
+                if (meleeOnce)
+                {
+                    canMelee = true;
+                    timeSpentMeleeing = 0;
+                    meleeOnce = false;
                 }
             }
 
@@ -76,6 +99,19 @@ public class MimicEnemy : MonoBehaviour
         enemyBullet.transform.position = mimicGun.transform.position;
         Rigidbody2D rb = enemyBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(mimicGun.transform.up * bulletForce, ForceMode2D.Impulse);
+    }
+
+    private void Melee()
+    {
+        mimicMelee.gameObject.SetActive(true);
+
+        timeSpentMeleeing += Time.deltaTime;
+
+        if(timeSpentMeleeing > meleeTime)
+        {
+            mimicMelee.gameObject.SetActive(false);
+            canMelee = false;
+        }
     }
 
     public void StartMoving()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMelee : MonoBehaviour
 {
     [SerializeField] private GameObject playerMelee;
-    [SerializeField] private float timeToLast = 1f;
+    [SerializeField] public float timeToLast = 1f;
     [SerializeField] private float meleeCooldown = 1f;
     private float timeUp, coolDownTimePassed;
     public bool isMeleeing, canCoolDown;
@@ -19,6 +19,7 @@ public class PlayerMelee : MonoBehaviour
             {
                 timeUp = 0;
                 coolDownTimePassed = 0;
+                gameObject.GetComponent<PlayerLocations>().hasJustMeleed = true;
                 isMeleeing = true;
                 canMelee = false;
             }
