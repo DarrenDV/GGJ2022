@@ -19,9 +19,15 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "MeleeEnemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            Debug.Log("Hit:" + collision.gameObject.name);
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "MeleeEnemyHitbox")
+        {
+            collision.gameObject.transform.parent.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
             Debug.Log("Hit:" + collision.gameObject.name);
             Destroy(this.gameObject);
         }
