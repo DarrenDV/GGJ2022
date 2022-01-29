@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float health = 100;
+    [SerializeField] Animator _animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,14 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            _animator.SetTrigger("Death");
+            StartCoroutine(Death());
         }
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
