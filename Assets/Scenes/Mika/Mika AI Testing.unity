@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6420247654316760671, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
 --- !u!1 &403209321
