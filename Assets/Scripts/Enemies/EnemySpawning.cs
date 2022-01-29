@@ -6,6 +6,7 @@ public class EnemySpawning : MonoBehaviour
 {
     public GameObject meleeEnemyPrefab;
     public GameObject[] spawns;
+    public List<GameObject> enemies = new List<GameObject>();
 
     private float spawnTime;
 
@@ -13,7 +14,7 @@ public class EnemySpawning : MonoBehaviour
     void Start()
     {
         spawns = GameObject.FindGameObjectsWithTag("Spawnpoint");
-        InvokeRepeating("SpawnEnemy", 2f, 1f);
+        StartInvoke();
     }
 
     // Update is called once per frame
@@ -22,10 +23,16 @@ public class EnemySpawning : MonoBehaviour
 
     }
 
+    void StartInvoke()
+    {
+        InvokeRepeating("SpawnEnemy", 2f, 1f);
+    }
+
     void SpawnEnemy()
     {
         int amountOfSpawnPoints = spawns.Length;
         int spawnIndex = Random.Range(0, amountOfSpawnPoints);
-        Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
+        GameObject enemy = Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
+        enemies.Add(enemy);
     }
 }

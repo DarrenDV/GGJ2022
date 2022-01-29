@@ -34,7 +34,7 @@ public class MeleeEnemyAttack : MonoBehaviour
             if (attackOnCooldown == false)
             {
                 attackOnCooldown = true;
-                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage); 
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject); 
                 StartCoroutine(ResetCooldown());
                 StartCoroutine(LerpToPlayer());
             }

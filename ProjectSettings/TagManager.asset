@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - MeleeEnemy
   - MeleeEnemyHitbox
+  - SpawnParent
   layers:
   - Default
   - TransparentFX
