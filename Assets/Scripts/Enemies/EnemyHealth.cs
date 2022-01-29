@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float health = 100;
     [SerializeField] private GameObject deathSoundPlayer;
+    [SerializeField] Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,14 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             deathSoundPlayer.GetComponent<AudioSource>().Play();
-            Destroy(gameObject);
+            _animator.SetTrigger("Death");
+            StartCoroutine(Death());
         }
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }

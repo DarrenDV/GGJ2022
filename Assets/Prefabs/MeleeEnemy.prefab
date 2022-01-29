@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  deathClip: {fileID: 0}
+  _animator: {fileID: 7333268868760159440}
 --- !u!114 &-345355926948328704
 MonoBehaviour:
   m_ObjectHideFlags: 0

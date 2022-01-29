@@ -94,7 +94,7 @@ public class RangedEnemyMovement : MonoBehaviour
         Vector2 dir = (player.transform.position - transform.position).normalized;
 
         // Rotates bullet into right direction
-        //bullet.transform.rotation = dir;
+        bullet.transform.right = player.transform.position - transform.position;
 
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(dir * 20, ForceMode2D.Impulse);
