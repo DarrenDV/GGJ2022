@@ -6,7 +6,7 @@ public class MeleeEnemyAttack : MonoBehaviour
 {
     bool attackOnCooldown = false;
     float attackCooldown = 2f;
-    float damage = 5f;
+    float damage = 50f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class MeleeEnemyAttack : MonoBehaviour
             if (attackOnCooldown == false)
             {
                 attackOnCooldown = true;
-                collision.gameObject.GetComponent<PlayerStatus>().health -= damage; 
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage); 
                 StartCoroutine(ResetCooldown());
             }
         }
