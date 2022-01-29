@@ -35,6 +35,11 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<PlayerMovement>().enabled = false;
             GetComponent<FlippingPlayerSprite>().enabled = false;
 
+            //Turning combat of for player
+            GetComponent<PlayerMelee>().enabled = false;
+            GetComponent<PlayerShooting>().enabled = false;
+
+            //Particles
             particleSystem.SetActive(true);
             GetComponent<ParticlesTowardEnemy>().StartEffect(killer);
 
