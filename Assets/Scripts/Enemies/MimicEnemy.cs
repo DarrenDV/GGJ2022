@@ -26,6 +26,7 @@ public class MimicEnemy : MonoBehaviour
 
     void Update()
     {
+        FlipSprite();
         if (canStartMoving)
         {
             Move();
@@ -33,6 +34,20 @@ public class MimicEnemy : MonoBehaviour
         if (canMelee)
         {
             Melee();
+        }
+    }
+
+    void FlipSprite()
+    {
+        float rotationZ = gameObject.transform.eulerAngles.z;
+        SpriteRenderer spriteR = gameObject.GetComponent<SpriteRenderer>();
+        if (rotationZ <= 90f || rotationZ >= 270f) 
+        {
+            spriteR.flipY = false;
+        }
+        else if (rotationZ > 90f && rotationZ < 270f)
+        {
+            spriteR.flipY = true;
         }
     }
 
