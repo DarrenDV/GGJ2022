@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float health = 100;
     [SerializeField] Animator _animator;
+    [SerializeField] private CircleCollider2D col;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, GameObject killer)
     {
         health -= damage;
         if (health <= 0)
@@ -30,7 +31,12 @@ public class PlayerHealth : MonoBehaviour
 
             // Death Animation
             _animator.SetTrigger("Death");
-            StopAllEnemies();   
+
+            //Stop enemies
+            StopAllEnemies();
+
+            //Lerp To Killer
+            StartCoroutine(LerpToKiller(killer));
         }
     }
 
@@ -48,6 +54,32 @@ public class PlayerHealth : MonoBehaviour
         foreach (GameObject enemy in activeEnemies)
         {
             enemy.GetComponent<NavMeshAgent>().speed = 0f;
+            if (enemy.gameObject.tag == "MeleeEnemy")
+            {
+                col.enabled = false;
+            }
+            else if (enemy.gameObject.tag == "Enemy")
+            {
+                enemy.GetComponent<RangedEnemyMovement>().enabled = false;
+                col.enabled = false;
+            }
         }
+
+    }
+
+    IEnumerator LerpToKiller(GameObject killer)
+    {
+        yield return new WaitForSeconds(1.5f);
+        Vector2 startPos = transform.position;
+        Vector2 lerpPos = killer.transform.position;
+        float elapsed = 0;
+        float duration = 2f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            transform.position = Vector2.Lerp(startPos, lerpPos, elapsed / duration);
+            yield return null;
+        }
+        transform.position = lerpPos;
     }
 }

@@ -91,6 +91,7 @@ public class RangedEnemyMovement : MonoBehaviour
         GetComponent<AudioSource>().Play();
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = transform.position;
+        bullet.GetComponent<EnemyBullet>().shooter = gameObject;
         Vector2 dir = (player.transform.position - transform.position).normalized;
 
         // Rotates bullet into right direction
