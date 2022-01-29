@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
 
             //Particles
             particleSystem.SetActive(true);
+            particleSystem.GetComponent<AudioSource>().Play();
             GetComponent<ParticlesTowardEnemy>().StartEffect(killer);
 
             // Death Animation
