@@ -8,10 +8,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject deathSoundPlayer;
     [SerializeField] Animator _animator;
 
+    private EnemySpawning enemySpawning;
+
     // Start is called before the first frame update
     void Start()
     {
         deathSoundPlayer = GameObject.Find("EnemyDeathAudio");
+        enemySpawning = GameObject.FindGameObjectWithTag("SpawnParent").GetComponent<EnemySpawning>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator Death()
     {
         yield return new WaitForSeconds(0.5f);
+        enemySpawning.enemies.Remove(gameObject);
         Destroy(gameObject);
     }
 }
