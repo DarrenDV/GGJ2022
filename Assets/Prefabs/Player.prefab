@@ -856,9 +856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMelee: {fileID: 5691823707928950379}
   timeToLast: 1
-  meleeCooldown: 0.33
   isMeleeing: 0
-  canCoolDown: 0
 --- !u!114 &-5790436434643319237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,6 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  _animator: {fileID: 1650576956756187824}
 --- !u!58 &143448972
 CircleCollider2D:
   m_ObjectHideFlags: 0
