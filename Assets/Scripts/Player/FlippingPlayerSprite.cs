@@ -17,12 +17,10 @@ public class FlippingPlayerSprite : MonoBehaviour
         SpriteRenderer spriteR = gameObject.GetComponent<SpriteRenderer>();
         if (playerX <= mouseX)
         {
-            //gameObject.transform.localScale = new Vector3(1, 1, 1);
             spriteR.flipY = false;
         } 
         else if (playerX > mouseX)
         {
-            //gameObject.transform.localScale = new Vector3(1, -1, 1);
             spriteR.flipY = true;
         }
     }

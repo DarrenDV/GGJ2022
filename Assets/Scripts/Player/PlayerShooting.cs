@@ -48,6 +48,10 @@ public class PlayerShooting : MonoBehaviour
         //Shoot bullet towards mouse pos
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = playerGun.transform.position;
+
+        // Rotates bullet into right direction
+        bullet.transform.rotation = gameObject.transform.rotation;
+
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(playerGun.transform.up * bulletForce, ForceMode2D.Impulse);
 

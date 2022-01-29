@@ -38,10 +38,16 @@ public class RangedEnemyMovement : MonoBehaviour
         if (lineOfSight == true)
         {
             agent.destination = transform.position;
+
+            // Enemy stops walking
+            gameObject.GetComponent<Animator>().enabled = false;
         }
         else
         {
             agent.destination = player.transform.position + offset;
+
+            // Enemy starts walking
+            gameObject.GetComponent<Animator>().enabled = true;
         }
 
         //Shooting cooldown
@@ -73,7 +79,6 @@ public class RangedEnemyMovement : MonoBehaviour
         {
             Debug.Log("RayCast: " + hit.collider.gameObject.name);
             lineOfSight = true;
-            
         }
         else
         {
@@ -86,6 +91,10 @@ public class RangedEnemyMovement : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = transform.position;
         Vector2 dir = (player.transform.position - transform.position).normalized;
+
+        // Rotates bullet into right direction
+        //bullet.transform.rotation = dir;
+
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(dir * 20, ForceMode2D.Impulse);
     }

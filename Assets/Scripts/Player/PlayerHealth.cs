@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float health = 100;
+    [SerializeField] Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,9 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             //death shit
+
+            // Death Animation
+            _animator.SetTrigger("Death");
         }
     }
 }

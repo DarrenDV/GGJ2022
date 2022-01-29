@@ -112,6 +112,10 @@ public class MimicEnemy : MonoBehaviour
     {
         GameObject enemyBullet = Instantiate(enemyBulletPrefab);
         enemyBullet.transform.position = mimicGun.transform.position;
+
+        // Rotates bullet into right direction
+        enemyBullet.transform.rotation = gameObject.transform.rotation;
+
         Rigidbody2D rb = enemyBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(mimicGun.transform.up * bulletForce, ForceMode2D.Impulse);
     }

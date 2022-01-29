@@ -26,4 +26,19 @@ public class EnemyBullet : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    // void FlipSprite()
+    // {
+    //     //float velocityX = rb.velocity.x;
+    //     float velocityX = gameObject.GetComponent<Rigidbody2D>().velocity.x;
+    //     SpriteRenderer spriteR = gameObject.GetComponent<SpriteRenderer>();
+    //     if (velocityX >= 0) 
+    //     {
+    //         spriteR.flipY = false;
+    //     }
+    //     else if (velocityX < 0)
+    //     {
+    //         spriteR.flipY = true;
+    //     }
+    // }
 }
