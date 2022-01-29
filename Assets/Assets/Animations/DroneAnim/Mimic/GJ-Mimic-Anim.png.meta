@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: fb321ce5c2798c4439dd51b1a0539296
+guid: 9afb95069dd676c4bb092e13e1a4e378
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9191394802465367931
-    second: GJ-Player-Anim-1_0
+      213: 1712189616429140732
+    second: GJ-Mimic-Anim_0
   - first:
-      213: 7952675137449165155
-    second: GJ-Player-Anim-1_1
+      213: -5425909006707327232
+    second: GJ-Mimic-Anim_1
   - first:
-      213: -6185503713885162683
-    second: GJ-Player-Anim-1_2
+      213: -994934567607712177
+    second: GJ-Mimic-Anim_2
   - first:
-      213: -3277818145719438708
-    second: GJ-Player-Anim-1_3
+      213: 9031574454989499910
+    second: GJ-Mimic-Anim_3
   - first:
-      213: 743625692011245330
-    second: GJ-Player-Anim-1_4
+      213: -7344281027287643080
+    second: GJ-Mimic-Anim_4
   - first:
-      213: -412494447242120656
-    second: GJ-Player-Anim-1_5
+      213: -2280864197714458232
+    second: GJ-Mimic-Anim_5
   - first:
-      213: 1515058600555679115
-    second: GJ-Player-Anim-1_6
+      213: 5947106183105651821
+    second: GJ-Mimic-Anim_6
   - first:
-      213: 8108336273751180703
-    second: GJ-Player-Anim-1_7
+      213: 9108647288145765159
+    second: GJ-Mimic-Anim_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GJ-Player-Anim-1_0
+      name: GJ-Mimic-Anim_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5881ea0102b917080800000000000000
-      internalID: -9191394802465367931
+      spriteID: cfa0f53726be2c710800000000000000
+      internalID: 1712189616429140732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GJ-Player-Anim-1_1
+      name: GJ-Mimic-Anim_1
       rect:
         serializedVersion: 2
         x: 16
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3610db507e39d5e60800000000000000
-      internalID: 7952675137449165155
+      spriteID: 00ffd9f818c43b4b0800000000000000
+      internalID: -5425909006707327232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GJ-Player-Anim-1_2
+      name: GJ-Mimic-Anim_2
       rect:
         serializedVersion: 2
         x: 32
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 543f309f42da82aa0800000000000000
-      internalID: -6185503713885162683
+      spriteID: f464cfa38484132f0800000000000000
+      internalID: -994934567607712177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GJ-Player-Anim-1_3
+      name: GJ-Mimic-Anim_3
       rect:
         serializedVersion: 2
         x: 48
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c82301a53c9d282d0800000000000000
-      internalID: -3277818145719438708
+      spriteID: 60e24209d19965d70800000000000000
+      internalID: 9031574454989499910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GJ-Player-Anim-1_4
+      name: GJ-Mimic-Anim_4
       rect:
         serializedVersion: 2
         x: 64
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21f2f2280a3e15a00800000000000000
-      internalID: 743625692011245330
+      spriteID: 83c01ed315fd31a90800000000000000
+      internalID: -7344281027287643080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GJ-Player-Anim-1_5
+      name: GJ-Mimic-Anim_5
       rect:
         serializedVersion: 2
         x: 80
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 032ff485c76864af0800000000000000
-      internalID: -412494447242120656
+      spriteID: 889c252c81eb850e0800000000000000
+      internalID: -2280864197714458232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GJ-Player-Anim-1_6
+      name: GJ-Mimic-Anim_6
       rect:
         serializedVersion: 2
         x: 96
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8d850425c1960510800000000000000
-      internalID: 1515058600555679115
+      spriteID: d64aa8d709d588250800000000000000
+      internalID: 5947106183105651821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GJ-Player-Anim-1_7
+      name: GJ-Mimic-Anim_7
       rect:
         serializedVersion: 2
         x: 112
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f958a5491e8968070800000000000000
-      internalID: 8108336273751180703
+      spriteID: 723e04ae27a686e70800000000000000
+      internalID: 9108647288145765159
       vertices: []
       indices: 
       edges: []

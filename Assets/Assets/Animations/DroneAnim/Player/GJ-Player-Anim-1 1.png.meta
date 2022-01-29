@@ -1,13 +1,31 @@
 fileFormatVersion: 2
-guid: 3d48604094029624bb5a69bde6f403fb
+guid: a0b3cb277878754459b6de1c52836daf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7446430575512793595
-    second: GJ-Drone-Walking_0
+      213: 7179703864502384526
+    second: GJ-Player-Anim-1 1_0
   - first:
-      213: -5206554215230433429
-    second: GJ-Drone-Walking_1
+      213: -4597041768435660455
+    second: GJ-Player-Anim-1 1_1
+  - first:
+      213: -392132840644592980
+    second: GJ-Player-Anim-1 1_2
+  - first:
+      213: 7997710359859378687
+    second: GJ-Player-Anim-1 1_3
+  - first:
+      213: -5502839453723938564
+    second: GJ-Player-Anim-1 1_4
+  - first:
+      213: -5944290269476753006
+    second: GJ-Player-Anim-1 1_5
+  - first:
+      213: -854292316861119238
+    second: GJ-Player-Anim-1 1_6
+  - first:
+      213: -1840688032797271328
+    second: GJ-Player-Anim-1 1_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GJ-Drone-Walking_0
+      name: GJ-Player-Anim-1 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf13c02d729075760800000000000000
-      internalID: 7446430575512793595
+      spriteID: e87f92400ae63a360800000000000000
+      internalID: 7179703864502384526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GJ-Drone-Walking_1
+      name: GJ-Player-Anim-1 1_1
       rect:
         serializedVersion: 2
         x: 16
@@ -156,8 +174,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b679069d68a9eb7b0800000000000000
-      internalID: -5206554215230433429
+      spriteID: 95942c62ed60430c0800000000000000
+      internalID: -4597041768435660455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GJ-Player-Anim-1 1_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa3d90524dde8af0800000000000000
+      internalID: -392132840644592980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GJ-Player-Anim-1 1_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff931e7d2339dfe60800000000000000
+      internalID: 7997710359859378687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GJ-Player-Anim-1 1_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0b7c01cacf1a3b0800000000000000
+      internalID: -5502839453723938564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GJ-Player-Anim-1 1_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291f60e7e73a18da0800000000000000
+      internalID: -5944290269476753006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GJ-Player-Anim-1 1_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4c52ff9a1f424f0800000000000000
+      internalID: -854292316861119238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GJ-Player-Anim-1 1_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea5ece8cff8476e0800000000000000
+      internalID: -1840688032797271328
       vertices: []
       indices: 
       edges: []
