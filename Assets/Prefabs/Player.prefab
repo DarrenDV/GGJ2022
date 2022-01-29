@@ -600,6 +600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e34ca60c336e1146864ebd0e21fdd3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageToDeal: 50
+  canDealDamage: 1
 --- !u!1 &5932263862440902118
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMelee: {fileID: 5691823707928950379}
   timeToLast: 1
-  meleeCooldown: 1
+  meleeCooldown: 0.33
   isMeleeing: 0
   canCoolDown: 0
 --- !u!114 &-5790436434643319237
