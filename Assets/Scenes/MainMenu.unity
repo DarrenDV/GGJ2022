@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -375.58472, y: 23.783997}
-  m_SizeDelta: {x: 345.599, y: 307.22}
+  m_AnchoredPosition: {x: -375.58472, y: 11.941101}
+  m_SizeDelta: {x: 345.599, y: 324.9843}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &38107089
 MonoBehaviour:
@@ -61418,7 +61418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1181, y: -90}
+  m_AnchoredPosition: {x: 1182.7, y: -74}
   m_SizeDelta: {x: 325, y: 400}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &905315219
@@ -61456,7 +61456,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Credits:\n\nDarren de Vr\xE9 (Darr#6153) - \nProgramming\n\nMika Bos (Bossie911#7093)
     - Programming\n \nJelle Middendorf (Lv 1 Skeleton#3575) - Art, Design, Programming\n\nOliver
-    Scargo (Amazed#6366) - \nSound & Music Design"
+    Scargo (Amazed#6366) - \nSound & Music Design\n\nDaniel - Human Resources"
 --- !u!222 &905315220
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -61937,7 +61937,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TITLE
+  m_Text: Umbra
 --- !u!222 &1428384830
 CanvasRenderer:
   m_ObjectHideFlags: 0
