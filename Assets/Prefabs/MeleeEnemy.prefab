@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 6420247654316760664}
   chasePlayer: 0
+  meleeEnemyAttack: {fileID: -345355926948328704}
 --- !u!195 &6420247654316760664
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -184,3 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc536b471e8b2a4f89cf35d05425b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 6420247654316760664}
+  col: {fileID: -4273303842972817474}
+  attacking: 0
