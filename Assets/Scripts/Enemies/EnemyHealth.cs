@@ -33,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             GameObject.Find("EnemiesLeftText").GetComponent<EnemyLeftUI>().RemoveEnemy();
+            enemySpawning.enemiesCurrentlyPresent--;
             if(gameObject.tag == "MeleeEnemy")
             {
                 isDying = true;
