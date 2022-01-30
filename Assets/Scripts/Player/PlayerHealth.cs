@@ -15,6 +15,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject playerMeleeWeapon;
     private float startingHealth;
 
+    private float AIMovespeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,9 +55,6 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<PlayerMelee>().enabled = false;
             GetComponent<PlayerShooting>().enabled = false;
 
-
-
-
             // Death Animation
             _animator.SetTrigger("Death");
 
@@ -76,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
 
         //Stopping current spawning
         spawnParent.GetComponent<EnemySpawning>().CancelInvoke();
+        AIMovespeed = activeEnemies[0].GetComponent<NavMeshAgent>().speed;
 
         //Stopping the movement for all active enemies
         foreach (GameObject enemy in activeEnemies)
@@ -91,7 +91,6 @@ public class PlayerHealth : MonoBehaviour
                 col.enabled = false;
             }
         }
-
     }
 
     IEnumerator LerpToKiller(GameObject killer)
@@ -102,7 +101,7 @@ public class PlayerHealth : MonoBehaviour
         particleSystem.GetComponent<AudioSource>().Play();
         GetComponent<ParticlesTowardEnemy>().StartEffect(killer);
 
-
+        //Lerping to the killer
         Vector2 startPos = transform.position;
         Vector2 lerpPos = killer.transform.position;
         float elapsed = 0;
@@ -115,12 +114,15 @@ public class PlayerHealth : MonoBehaviour
         }
         transform.position = lerpPos;
 
+        //Stop with the particle effect
         GetComponent<ParticlesTowardEnemy>().StopEffect();
         GetComponent<ParticlesTowardEnemy>().canPlay = false;
+
+        //Kill the killer
         killer.GetComponent<EnemyHealth>().TakeDamage(500);
 
+        //Start the revive animation and go in idle after
         _animator.SetTrigger("Revive");
-
         yield return new WaitForSeconds(1.183f);
         _animator.SetTrigger("Idle");
 
@@ -134,7 +136,33 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerShooting>().Reset();
 
         GetComponent<PlayerLocations>().SpawnMimic();
+        StartAllEnemies();
+    }
 
+    void StartAllEnemies()
+    {
+        //List for active enemies
+        List<GameObject> activeEnemies = new List<GameObject>();
+        GameObject spawnParent = GameObject.FindWithTag("SpawnParent");
+        activeEnemies = spawnParent.GetComponent<EnemySpawning>().enemies;
+
+        //Stopping current spawning
+        spawnParent.GetComponent<EnemySpawning>().StartInvoke();
+
+        //Stopping the movement for all active enemies
+        foreach (GameObject enemy in activeEnemies)
+        {
+            enemy.GetComponent<NavMeshAgent>().speed = AIMovespeed;
+            if (enemy.gameObject.tag == "MeleeEnemy")
+            {
+                col.enabled = true;
+            }
+            else if (enemy.gameObject.tag == "Enemy")
+            {
+                enemy.GetComponent<RangedEnemyMovement>().enabled = true;
+                col.enabled = true;
+            }
+        }
     }
 
     public void Reset()
