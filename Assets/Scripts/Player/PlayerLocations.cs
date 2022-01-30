@@ -25,6 +25,11 @@ public class PlayerLocations : MonoBehaviour
             hasJustMeleed = false;
             saveTime = 0;
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SpawnMimic();
+        }
     }
 
     public void SpawnMimic()

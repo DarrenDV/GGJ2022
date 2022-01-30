@@ -34,10 +34,8 @@ public class EnemyHealth : MonoBehaviour
         {
             GameObject.Find("EnemiesLeftText").GetComponent<EnemyLeftUI>().RemoveEnemy();
             enemySpawning.enemiesCurrentlyPresent--;
-            if(gameObject.tag == "MeleeEnemy")
-            {
-                isDying = true;
-            }
+            isDying = true;
+
             
             GetComponent<CircleCollider2D>().enabled = false;
 
