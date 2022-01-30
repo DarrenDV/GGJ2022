@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Text healthText;
     [SerializeField] private GameObject playerMeleeWeapon;
     [SerializeField] private GameObject enemySpawn;
+    [SerializeField] private GameObject reviveSound;
     private float startingHealth;
 
     private float AIMovespeed;
@@ -142,6 +143,7 @@ public class PlayerHealth : MonoBehaviour
 
         //Start the revive animation and go in idle after
         _animator.SetTrigger("Revive");
+        reviveSound.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.183f);
         _animator.SetTrigger("Idle");
 
