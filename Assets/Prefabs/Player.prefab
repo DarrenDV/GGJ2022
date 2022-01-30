@@ -6362,6 +6362,7 @@ MonoBehaviour:
   particleSystem: {fileID: 3322552188900537401}
   lerpToKillerWaitTime: 3
   healthText: {fileID: 6257841883668191894}
+  playerMeleeWeapon: {fileID: 5691823707928950379}
 --- !u!58 &143448972
 CircleCollider2D:
   m_ObjectHideFlags: 0

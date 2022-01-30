@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject particleSystem;
     [SerializeField] private float lerpToKillerWaitTime = 3f;
     [SerializeField] private Text healthText;
+    [SerializeField] private GameObject playerMeleeWeapon;
     private float startingHealth;
 
     // Start is called before the first frame update
@@ -45,9 +46,13 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<PlayerMovement>().enabled = false;
             GetComponent<FlippingPlayerSprite>().enabled = false;
 
+            playerMeleeWeapon.GetComponent<MeleeWeapon>().canDealDamage = false;
+            playerMeleeWeapon.SetActive(false); 
+
             //Turning combat of for player
             GetComponent<PlayerMelee>().enabled = false;
             GetComponent<PlayerShooting>().enabled = false;
+
 
 
 
