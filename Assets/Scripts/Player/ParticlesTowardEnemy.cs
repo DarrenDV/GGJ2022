@@ -52,6 +52,8 @@ public class ParticlesTowardEnemy : MonoBehaviour
 	public void StopEffect()
     {
 		canPlay = false;
+		system.Clear();
 		system.Stop();
+		system.Clear();
     }
 }

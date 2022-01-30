@@ -40,10 +40,18 @@ public class PlayerHealth : MonoBehaviour
         SetHealthUI();
         if (health <= 0)
         {
-            if (killer == null || killer.GetComponent<EnemyHealth>().isDying)
+            if(killer.tag == "Mimic")
             {
                 killer = Instantiate(enemySpawn, enemyPos, Quaternion.identity);
                 GameObject.FindWithTag("SpawnParent").GetComponent<EnemySpawning>().enemies.Add(killer);
+            }
+            else
+            {
+                if (killer == null || killer.GetComponent<EnemyHealth>().isDying || killer.tag == "Mimic")
+                {
+                    killer = Instantiate(enemySpawn, enemyPos, Quaternion.identity);
+                    GameObject.FindWithTag("SpawnParent").GetComponent<EnemySpawning>().enemies.Add(killer);
+                }
             }
 
             GetComponent<AudioSource>().Play();
@@ -158,6 +166,8 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = true;
         GetComponent<FlippingPlayerSprite>().enabled = true;
         GetComponent<PlayerMelee>().enabled = true;
+        GetComponent<PlayerMelee>().isMeleeing = false;
+        GetComponent<PlayerMelee>().canMelee = true;
         GetComponent<PlayerShooting>().enabled = true;
 
         Reset();
