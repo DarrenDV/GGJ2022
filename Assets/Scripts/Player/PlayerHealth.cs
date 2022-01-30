@@ -166,6 +166,8 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = true;
         GetComponent<FlippingPlayerSprite>().enabled = true;
         GetComponent<PlayerMelee>().enabled = true;
+        GetComponent<PlayerMelee>().isMeleeing = false;
+        GetComponent<PlayerMelee>().canMelee = true;
         GetComponent<PlayerShooting>().enabled = true;
 
         Reset();

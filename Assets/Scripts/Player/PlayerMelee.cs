@@ -8,7 +8,7 @@ public class PlayerMelee : MonoBehaviour
     [SerializeField] public float timeToLast = 1f;
     private float timeUp;
     public bool isMeleeing;
-    private bool canMelee = true;
+    public bool canMelee = true;
 
     void Update()
     { 
