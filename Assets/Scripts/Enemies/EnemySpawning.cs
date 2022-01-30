@@ -8,7 +8,7 @@ public class EnemySpawning : MonoBehaviour
     public GameObject[] spawns;
     public List<GameObject> enemies = new List<GameObject>();
 
-    int TotalEnemyPool = 100;
+    public int totalEnemyPool = 100;
 
     private float spawnTime;
 
@@ -35,10 +35,10 @@ public class EnemySpawning : MonoBehaviour
         int amountOfSpawnPoints = spawns.Length;
         int spawnIndex = Random.Range(0, amountOfSpawnPoints);
         
-        if (TotalEnemyPool > 0) 
+        if (totalEnemyPool > 0) 
         {
-            Debug.Log(TotalEnemyPool);
-            TotalEnemyPool--;
+            Debug.Log(totalEnemyPool);
+            totalEnemyPool--;
             GameObject enemy = Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
             enemies.Add(enemy);
         }
