@@ -107,6 +107,9 @@ public class PlayerHealth : MonoBehaviour
         transform.position = lerpPos;
 
         yield return new WaitForSeconds(1f);
+
+        GetComponent<ParticlesTowardEnemy>().canPlay = false;
+
         killer.GetComponent<EnemyHealth>().TakeDamage(500);
 
         GetComponent<PlayerLocations>().SpawnMimic();
