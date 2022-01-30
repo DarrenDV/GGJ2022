@@ -40,16 +40,10 @@ public class RangedEnemyMovement : MonoBehaviour
         if (lineOfSight == true)
         {
             agent.destination = transform.position;
-
-            // Enemy stops walking
-            gameObject.GetComponent<Animator>().enabled = false;
         }
         else
         {
             agent.destination = player.transform.position + offset;
-
-            // Enemy starts walking
-            gameObject.GetComponent<Animator>().enabled = true;
         }
 
         //Shooting cooldown
