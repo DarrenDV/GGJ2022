@@ -111,6 +111,18 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<ParticlesTowardEnemy>().StopEffect();
         GetComponent<ParticlesTowardEnemy>().canPlay = false;
         killer.GetComponent<EnemyHealth>().TakeDamage(500);
+
+        _animator.SetTrigger("Revive");
+
+        yield return new WaitForSeconds(1.183f);
+        _animator.SetTrigger("Idle");
+
+        //Turning scripts on again
+        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<FlippingPlayerSprite>().enabled = true;
+        GetComponent<PlayerMelee>().enabled = true;
+        GetComponent<PlayerShooting>().enabled = true;
+
         GetComponent<PlayerLocations>().SpawnMimic();
 
     }
