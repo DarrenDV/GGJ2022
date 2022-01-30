@@ -11,7 +11,7 @@ public class MeleeEnemyMovement : MonoBehaviour
 
     private GameObject player;
     private Vector3 offset;
-    int offsetSize = 5;
+    int offsetSize = 4;
 
 
 
