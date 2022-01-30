@@ -37,7 +37,7 @@ public class EnemySpawning : MonoBehaviour
         
         if (totalEnemyPool > 0) 
         {
-            TotalEnemyPool--;
+            totalEnemyPool--;
             GameObject enemy = Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
             enemies.Add(enemy);
         }
