@@ -151,6 +151,7 @@ MonoBehaviour:
   agent: {fileID: 5543871429611398882}
   bulletPrefab: {fileID: 5515552362152019223, guid: 8b76a92f951d27848bdd94171fcb9f5d, type: 3}
   lineOfSight: 0
+  bulletMultiplier: 5
 --- !u!195 &5543871429611398882
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -225,6 +226,7 @@ MonoBehaviour:
   _animator: {fileID: 3380056898733733091}
   ammoPickup: {fileID: 3032020366044314721, guid: 7c07e6462b3a5a1458def928d60f5c4b, type: 3}
   oneInHowMany: 10
+  isDying: 0
 --- !u!82 &7959370228976912391
 AudioSource:
   m_ObjectHideFlags: 0

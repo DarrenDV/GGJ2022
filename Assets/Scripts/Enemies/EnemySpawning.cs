@@ -14,7 +14,7 @@ public class EnemySpawning : MonoBehaviour
     public int enemiesCurrentlyPresent;
 
     private float spawnTime;
-    private int chanceForRanged = 5;
+    [SerializeField] private int chanceForRanged = 7;
 
     // Start is called before the first frame update
     void Start()
