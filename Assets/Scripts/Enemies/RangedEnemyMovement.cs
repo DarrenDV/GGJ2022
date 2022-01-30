@@ -17,6 +17,8 @@ public class RangedEnemyMovement : MonoBehaviour
     float shootTimer = 0;
     bool readyToShoot = false;
 
+    [SerializeField] private float bulletMultiplier = 10f;
+
 
 
     // Start is called before the first frame update
@@ -98,6 +100,6 @@ public class RangedEnemyMovement : MonoBehaviour
         bullet.transform.eulerAngles = new Vector3(0, 0, bullet.transform.rotation.eulerAngles.z);
 
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(dir * 15, ForceMode2D.Impulse);
+        rb.AddForce(dir * bulletMultiplier, ForceMode2D.Impulse);
     }
 }

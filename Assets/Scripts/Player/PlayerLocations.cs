@@ -25,12 +25,6 @@ public class PlayerLocations : MonoBehaviour
             hasJustMeleed = false;
             saveTime = 0;
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            GiveToEnemy();
-            moments = new List<MomentData>();
-        }
     }
 
     public void SpawnMimic()
