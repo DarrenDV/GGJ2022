@@ -98,9 +98,7 @@ public class PlayerHealth : MonoBehaviour
         }
         transform.position = lerpPos;
 
-        yield return new WaitForSeconds(1f);
         killer.GetComponent<EnemyHealth>().TakeDamage(500);
-
         GetComponent<PlayerLocations>().SpawnMimic();
 
     }
