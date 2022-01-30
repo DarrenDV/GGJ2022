@@ -26,5 +26,9 @@ public class EnemyBullet : MonoBehaviour
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage, shooter);
             Destroy(this.gameObject);
         }
+        else if (collision.gameObject.layer == 6)
+        {
+            Destroy(gameObject);
+        }
     }
 }
