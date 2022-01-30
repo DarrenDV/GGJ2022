@@ -9,6 +9,8 @@ public class EnemySpawning : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
 
     public int totalEnemyPool = 100;
+    [SerializeField] private int enemiesAllowedAtOnce = 15;
+    public int enemiesCurrentlyPresent;
 
     private float spawnTime;
 
@@ -17,12 +19,6 @@ public class EnemySpawning : MonoBehaviour
     {
         spawns = GameObject.FindGameObjectsWithTag("Spawnpoint");
         StartInvoke();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void StartInvoke()
@@ -35,11 +31,12 @@ public class EnemySpawning : MonoBehaviour
         int amountOfSpawnPoints = spawns.Length;
         int spawnIndex = Random.Range(0, amountOfSpawnPoints);
         
-        if (totalEnemyPool > 0) 
+        if (totalEnemyPool > 0 && (enemiesCurrentlyPresent < enemiesAllowedAtOnce)) 
         {
             totalEnemyPool--;
             GameObject enemy = Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
             enemies.Add(enemy);
+            enemiesCurrentlyPresent++;
         }
     }
 }
