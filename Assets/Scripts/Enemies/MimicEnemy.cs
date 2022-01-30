@@ -7,7 +7,9 @@ public class MimicEnemy : MonoBehaviour
     [SerializeField] private GameObject mimicGun;
     [SerializeField] private GameObject enemyBulletPrefab;
     [SerializeField] private GameObject mimicMelee;
-    [SerializeField] private int bulletForce = 10; 
+    [SerializeField] private int bulletForce = 10;
+
+    [SerializeField] private AudioClip shootingClip, meleeClip;
 
     public List<MomentData> moments = new List<MomentData>();
     bool canStartMoving = false;
@@ -110,6 +112,9 @@ public class MimicEnemy : MonoBehaviour
 
     public void Shoot()
     {
+        GetComponent<AudioSource>().clip = shootingClip;
+        GetComponent<AudioSource>().Play();
+
         GameObject enemyBullet = Instantiate(enemyBulletPrefab);
         enemyBullet.transform.position = mimicGun.transform.position;
 
@@ -122,6 +127,9 @@ public class MimicEnemy : MonoBehaviour
 
     private void Melee()
     {
+        GetComponent<AudioSource>().clip = meleeClip;
+        GetComponent<AudioSource>().Play();
+
         mimicMelee.gameObject.SetActive(true);
 
         timeSpentMeleeing += Time.deltaTime;

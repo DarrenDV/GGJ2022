@@ -12,40 +12,46 @@ public class ParticlesTowardEnemy : MonoBehaviour
 
 	int count;
 
+	public bool canPlay;
+
 	void Update()
 	{
+        if (canPlay)
+        {
+			count = system.GetParticles(particles);
 
-		count = system.GetParticles(particles);
+			for (int i = 0; i < count; i++)
+			{
+				ParticleSystem.Particle particle = particles[i];
 
-		for (int i = 0; i < count; i++)
-		{
-			ParticleSystem.Particle particle = particles[i];
-
-			Vector3 v1 = system.transform.TransformPoint(particle.position);
-			Vector3 v2 = targetTransform.transform.position;
+				Vector3 v1 = system.transform.TransformPoint(particle.position);
+				Vector3 v2 = targetTransform.transform.position;
 
 
-			Vector3 tarPosi = (v2 - v1) * (particle.remainingLifetime / particle.startLifetime);
-			particle.position = system.transform.InverseTransformPoint(v2 - tarPosi);
-			particles[i] = particle;
-		}
+				Vector3 tarPosi = (v2 - v1) * (particle.remainingLifetime / particle.startLifetime);
+				particle.position = system.transform.InverseTransformPoint(v2 - tarPosi);
+				particles[i] = particle;
+			}
 
-		system.SetParticles(particles, count);
+			system.SetParticles(particles, count);
 
-		if (system.time > system.main.duration)
-		{
-			gameObject.SetActive(false);
+			if (system.time > system.main.duration)
+			{
+				gameObject.SetActive(false);
+			}
 		}
 	}
 
 	public void StartEffect(GameObject target)
 	{
 		targetTransform = target.transform;
+		canPlay = true;
 		system.Play();
 	}
 
 	public void StopEffect()
     {
+		canPlay = false;
 		system.Stop();
     }
 }

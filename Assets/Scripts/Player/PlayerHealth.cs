@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] float health = 100;
+    public float health = 100;
     [SerializeField] Animator _animator;
     [SerializeField] private CircleCollider2D col;
     [SerializeField] private GameObject particleSystem;
     [SerializeField] private float lerpToKillerWaitTime = 3f;
+    [SerializeField] private Text healthText;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        SetHealthUI();
     }
 
     // Update is called once per frame
@@ -23,9 +25,15 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
+    public void SetHealthUI()
+    {
+        healthText.text = "Health: " + health;
+    }
+
     public void TakeDamage(float damage, GameObject killer)
     {
         health -= damage;
+        SetHealthUI();
         if (health <= 0)
         {
             GetComponent<AudioSource>().Play();
@@ -98,6 +106,7 @@ public class PlayerHealth : MonoBehaviour
         }
         transform.position = lerpPos;
 
+        GetComponent<ParticlesTowardEnemy>().canPlay = false;
         killer.GetComponent<EnemyHealth>().TakeDamage(500);
         GetComponent<PlayerLocations>().SpawnMimic();
 
