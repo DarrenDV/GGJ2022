@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject playerGun;
-    [SerializeField] private Text ammoText;
+    [SerializeField] private TextMeshProUGUI  ammoText;
     [SerializeField] private Slider reloadSlider;
     [SerializeField] private float reloadTime = 0.5f;
     [SerializeField] private int bulletForce = 20;

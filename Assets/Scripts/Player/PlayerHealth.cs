@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private CircleCollider2D col;
     [SerializeField] private GameObject particleSystem;
     [SerializeField] private float lerpToKillerWaitTime = 3f;
-    [SerializeField] private Text healthText;
+    [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private GameObject playerMeleeWeapon;
     [SerializeField] private GameObject enemySpawn;
     [SerializeField] private GameObject reviveSound;

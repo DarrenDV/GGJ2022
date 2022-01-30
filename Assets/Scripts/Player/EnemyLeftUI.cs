@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class EnemyLeftUI : MonoBehaviour
 {
     private int totalEnemies;
-    [SerializeField] private Text enemiesLeft;
+    [SerializeField] private TextMeshProUGUI enemiesLeft;
 
     // Start is called before the first frame update
     void Start()
