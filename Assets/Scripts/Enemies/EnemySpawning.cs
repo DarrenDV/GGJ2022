@@ -8,6 +8,8 @@ public class EnemySpawning : MonoBehaviour
     public GameObject[] spawns;
     public List<GameObject> enemies = new List<GameObject>();
 
+    int TotalEnemyPool = 100;
+
     private float spawnTime;
 
     // Start is called before the first frame update
@@ -32,7 +34,13 @@ public class EnemySpawning : MonoBehaviour
     {
         int amountOfSpawnPoints = spawns.Length;
         int spawnIndex = Random.Range(0, amountOfSpawnPoints);
-        GameObject enemy = Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
-        enemies.Add(enemy);
+        
+        if (TotalEnemyPool > 0) 
+        {
+            Debug.Log(TotalEnemyPool);
+            TotalEnemyPool--;
+            GameObject enemy = Instantiate(meleeEnemyPrefab, spawns[spawnIndex].transform);
+            enemies.Add(enemy);
+        }
     }
 }

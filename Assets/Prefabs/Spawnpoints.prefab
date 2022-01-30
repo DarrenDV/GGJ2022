@@ -295,3 +295,4 @@ MonoBehaviour:
   meleeEnemyPrefab: {fileID: 6420247654316760671, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
   spawns: []
   enemies: []
+  TotalEnemyPool: 10
