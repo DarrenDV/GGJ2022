@@ -98,6 +98,6 @@ public class RangedEnemyMovement : MonoBehaviour
         bullet.transform.eulerAngles = new Vector3(0, 0, bullet.transform.rotation.eulerAngles.z);
 
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(dir * 20, ForceMode2D.Impulse);
+        rb.AddForce(dir * 15, ForceMode2D.Impulse);
     }
 }
