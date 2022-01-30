@@ -117,6 +117,7 @@ public class MimicEnemy : MonoBehaviour
 
         GameObject enemyBullet = Instantiate(enemyBulletPrefab);
         enemyBullet.transform.position = mimicGun.transform.position;
+        enemyBullet.GetComponent<EnemyBullet>().shooter = gameObject;
 
         // Rotates bullet into right direction
         enemyBullet.transform.rotation = gameObject.transform.rotation;
