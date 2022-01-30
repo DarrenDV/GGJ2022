@@ -127,8 +127,11 @@ public class MimicEnemy : MonoBehaviour
 
     private void Melee()
     {
-        GetComponent<AudioSource>().clip = meleeClip;
-        GetComponent<AudioSource>().Play();
+        if(timeSpentMeleeing == 0)
+        {
+            GetComponent<AudioSource>().clip = meleeClip;
+            GetComponent<AudioSource>().Play();
+        }
 
         mimicMelee.gameObject.SetActive(true);
 
