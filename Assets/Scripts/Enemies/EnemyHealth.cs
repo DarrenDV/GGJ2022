@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float health = 100;
     [SerializeField] private GameObject deathSoundPlayer;
     [SerializeField] Animator _animator;
+    [SerializeField] private GameObject ammoPickup;
+    [SerializeField] private int oneInHowMany = 10;
 
     private EnemySpawning enemySpawning;
 
@@ -28,6 +30,12 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            if(Random.Range(0, oneInHowMany) == 1)
+            {
+                GameObject.Instantiate(ammoPickup, transform.position, Quaternion.identity);
+            }
+
+
             deathSoundPlayer.GetComponent<AudioSource>().Play();
             _animator.SetTrigger("Death");
             StartCoroutine(Death());

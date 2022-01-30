@@ -12,11 +12,13 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private float reloadTime = 0.5f;
     [SerializeField] private int bulletForce = 20;
     public int ammo = 5;
+    private int originalAmmo;
 
     private bool isReloading;
 
     private void Start()
     {
+        originalAmmo = ammo;
         SetAmmoText();
         reloadSlider.maxValue = reloadTime;
     }
@@ -83,5 +85,11 @@ public class PlayerShooting : MonoBehaviour
     public void SetAmmoText()
     {
         ammoText.text = "Ammo: " + ammo;
+    }
+
+    public void Reset()
+    {
+        ammo = originalAmmo;
+        SetAmmoText();
     }
 }

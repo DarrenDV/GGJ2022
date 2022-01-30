@@ -177,6 +177,8 @@ MonoBehaviour:
   health: 100
   deathSoundPlayer: {fileID: 0}
   _animator: {fileID: 7333268868760159440}
+  ammoPickup: {fileID: 3032020366044314721, guid: 7c07e6462b3a5a1458def928d60f5c4b, type: 3}
+  oneInHowMany: 10
 --- !u!114 &-345355926948328704
 MonoBehaviour:
   m_ObjectHideFlags: 0
