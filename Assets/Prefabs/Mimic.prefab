@@ -287,8 +287,8 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 5515552362152019223, guid: 8b76a92f951d27848bdd94171fcb9f5d, type: 3}
   mimicMelee: {fileID: 4142684878558989002}
   bulletForce: 10
-  shootingClip: {fileID: 8300000, guid: ab213a4edf187c04cae6b04bb6ac38d8, type: 3}
-  meleeClip: {fileID: 8300000, guid: c5a8e77adb68090469c2d43a485bbf76, type: 3}
+  shootingClip: {fileID: 8300000, guid: 664198eeda9d9f543a365282b44fe483, type: 3}
+  meleeClip: {fileID: 8300000, guid: 575ee88d3bdaa364686e8ba18db2e7d8, type: 3}
   timeInterval: 0
 --- !u!95 &4296344484288981306
 Animator:

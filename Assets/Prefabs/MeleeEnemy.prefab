@@ -179,6 +179,7 @@ MonoBehaviour:
   _animator: {fileID: 7333268868760159440}
   ammoPickup: {fileID: 3032020366044314721, guid: 7c07e6462b3a5a1458def928d60f5c4b, type: 3}
   oneInHowMany: 10
+  isDying: 0
 --- !u!114 &-345355926948328704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c5a8e77adb68090469c2d43a485bbf76, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 575ee88d3bdaa364686e8ba18db2e7d8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.05
   m_Pitch: 1

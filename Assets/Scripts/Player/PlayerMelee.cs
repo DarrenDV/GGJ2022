@@ -6,6 +6,7 @@ public class PlayerMelee : MonoBehaviour
 {
     [SerializeField] private GameObject playerMelee;
     [SerializeField] public float timeToLast = 1f;
+    [SerializeField] private GameObject meleeSound;
     private float timeUp;
     public bool isMeleeing;
     public bool canMelee = true;
@@ -29,7 +30,7 @@ public class PlayerMelee : MonoBehaviour
             playerMelee.SetActive(true);
             if (timeUp == 0)
             {
-                playerMelee.GetComponent<AudioSource>().Play();
+                meleeSound.GetComponent<AudioSource>().Play();
             }
             
             timeUp += Time.deltaTime;
