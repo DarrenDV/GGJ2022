@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jelle/Level 2.unity
     guid: cff90deff20e9914eacb316b5a6492f4
+  - enabled: 1
+    path: Assets/Scenes/RestartScreen.unity
+    guid: f75da53987496a04ca85475e3238a761
   m_configObjects: {}

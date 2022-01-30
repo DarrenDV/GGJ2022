@@ -10,6 +10,8 @@ public class EnemySpawning : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
 
     public int totalEnemyPool = 100;
+    [SerializeField] private int enemiesAllowedAtOnce = 15;
+    public int enemiesCurrentlyPresent;
 
     private float spawnTime;
     private int chanceForRanged = 5;
@@ -19,12 +21,6 @@ public class EnemySpawning : MonoBehaviour
     {
         spawns = GameObject.FindGameObjectsWithTag("Spawnpoint");
         StartInvoke();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void StartInvoke()
@@ -37,7 +33,7 @@ public class EnemySpawning : MonoBehaviour
         int amountOfSpawnPoints = spawns.Length;
         int spawnIndex = Random.Range(0, amountOfSpawnPoints);
         
-        if (totalEnemyPool > 0) 
+        if (totalEnemyPool > 0 && (enemiesCurrentlyPresent < enemiesAllowedAtOnce)) 
         {
             int ran = Random.Range(0, chanceForRanged);
             if (ran == 0)
@@ -51,6 +47,7 @@ public class EnemySpawning : MonoBehaviour
                 enemies.Add(enemy);
             }
             totalEnemyPool--;
+            enemiesCurrentlyPresent++;
         }
     }
 }

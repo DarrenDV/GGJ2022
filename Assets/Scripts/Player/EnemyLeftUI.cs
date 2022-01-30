@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyLeftUI : MonoBehaviour
 {
@@ -24,5 +25,10 @@ public class EnemyLeftUI : MonoBehaviour
     {
         totalEnemies--;
         UpdateEnemyText();
+
+        if (totalEnemies < 1)
+        {
+            SceneManager.LoadScene("RestartScreen");
+        }
     }
 }
