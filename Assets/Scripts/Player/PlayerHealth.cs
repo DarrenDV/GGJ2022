@@ -47,10 +47,7 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<PlayerMelee>().enabled = false;
             GetComponent<PlayerShooting>().enabled = false;
 
-            //Particles
-            particleSystem.SetActive(true);
-            particleSystem.GetComponent<AudioSource>().Play();
-            GetComponent<ParticlesTowardEnemy>().StartEffect(killer);
+
 
             // Death Animation
             _animator.SetTrigger("Death");
@@ -93,7 +90,12 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator LerpToKiller(GameObject killer)
     {
         yield return new WaitForSeconds(lerpToKillerWaitTime);
-        GetComponent<ParticlesTowardEnemy>().StopEffect();
+        //Particles
+        particleSystem.SetActive(true);
+        particleSystem.GetComponent<AudioSource>().Play();
+        GetComponent<ParticlesTowardEnemy>().StartEffect(killer);
+
+
         Vector2 startPos = transform.position;
         Vector2 lerpPos = killer.transform.position;
         float elapsed = 0;
@@ -106,6 +108,7 @@ public class PlayerHealth : MonoBehaviour
         }
         transform.position = lerpPos;
 
+        GetComponent<ParticlesTowardEnemy>().StopEffect();
         GetComponent<ParticlesTowardEnemy>().canPlay = false;
         killer.GetComponent<EnemyHealth>().TakeDamage(500);
         GetComponent<PlayerLocations>().SpawnMimic();
