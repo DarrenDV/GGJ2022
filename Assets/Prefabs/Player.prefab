@@ -6507,6 +6507,7 @@ MonoBehaviour:
   playerMeleeWeapon: {fileID: 5691823707928950379}
   enemySpawn: {fileID: 6420247654316760671, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
   reviveSound: {fileID: 5811036436419512966}
+  spriteRenderer: {fileID: 7041236615745058871}
 --- !u!58 &143448972
 CircleCollider2D:
   m_ObjectHideFlags: 0

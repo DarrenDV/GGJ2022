@@ -24,23 +24,7 @@ public class EnemyBullet : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage, shooter);
-            Debug.Log("Hit:" + collision.gameObject.name);
             Destroy(this.gameObject);
         }
     }
-
-    // void FlipSprite()
-    // {
-    //     //float velocityX = rb.velocity.x;
-    //     float velocityX = gameObject.GetComponent<Rigidbody2D>().velocity.x;
-    //     SpriteRenderer spriteR = gameObject.GetComponent<SpriteRenderer>();
-    //     if (velocityX >= 0) 
-    //     {
-    //         spriteR.flipY = false;
-    //     }
-    //     else if (velocityX < 0)
-    //     {
-    //         spriteR.flipY = true;
-    //     }
-    // }
 }

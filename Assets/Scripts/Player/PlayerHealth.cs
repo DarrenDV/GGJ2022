@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject playerMeleeWeapon;
     [SerializeField] private GameObject enemySpawn;
     [SerializeField] private GameObject reviveSound;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private float startingHealth;
 
     private float AIMovespeed;
@@ -129,6 +130,9 @@ public class PlayerHealth : MonoBehaviour
         particleSystem.GetComponent<AudioSource>().Play();
         GetComponent<ParticlesTowardEnemy>().StartEffect(killer);
 
+        //Turning the remaining sprites off
+        spriteRenderer.enabled = false;
+
         //Lerping to the killer
         Vector2 startPos = transform.position;
         Vector2 lerpPos = killer.transform.position;
@@ -141,6 +145,9 @@ public class PlayerHealth : MonoBehaviour
             yield return null;
         }
         transform.position = lerpPos;
+
+        //Turning the remaining sprites back on
+        spriteRenderer.enabled = true;
 
         //Stop with the particle effect
         GetComponent<ParticlesTowardEnemy>().StopEffect();

@@ -77,7 +77,6 @@ public class RangedEnemyMovement : MonoBehaviour
 
         if (hit.collider != null && hit.collider.tag == "Player")
         {
-            Debug.Log("RayCast: " + hit.collider.gameObject.name);
             lineOfSight = true;
         }
         else
