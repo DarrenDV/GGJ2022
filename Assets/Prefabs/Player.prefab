@@ -6363,6 +6363,7 @@ MonoBehaviour:
   lerpToKillerWaitTime: 3
   healthText: {fileID: 6257841883668191894}
   playerMeleeWeapon: {fileID: 5691823707928950379}
+  enemySpawn: {fileID: 6420247654316760671, guid: 870125641ab92e8468c5289d6ab6a87c, type: 3}
 --- !u!58 &143448972
 CircleCollider2D:
   m_ObjectHideFlags: 0

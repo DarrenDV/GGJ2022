@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float lerpToKillerWaitTime = 3f;
     [SerializeField] private Text healthText;
     [SerializeField] private GameObject playerMeleeWeapon;
+    [SerializeField] private GameObject enemySpawn;
     private float startingHealth;
 
     private float AIMovespeed;
@@ -24,23 +25,25 @@ public class PlayerHealth : MonoBehaviour
         SetHealthUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetHealthUI()
     {
         healthText.text = "Health: " + health;
     }
 
     public void TakeDamage(float damage, GameObject killer)
-    {
+    { 
+        Vector3 enemyPos = killer.transform.position;
+
         health -= damage;
         SetHealthUI();
         if (health <= 0)
         {
+            if (killer == null || killer.GetComponent<EnemyHealth>().isDying)
+            {
+                killer = Instantiate(enemySpawn, enemyPos, Quaternion.identity);
+                GameObject.FindWithTag("SpawnParent").GetComponent<EnemySpawning>().enemies.Add(killer);
+            }
+
             GetComponent<AudioSource>().Play();
             //death shit
 
@@ -49,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<FlippingPlayerSprite>().enabled = false;
 
             playerMeleeWeapon.GetComponent<MeleeWeapon>().canDealDamage = false;
-            playerMeleeWeapon.SetActive(false); 
+            playerMeleeWeapon.SetActive(false);
 
             //Turning combat of for player
             GetComponent<PlayerMelee>().enabled = false;
