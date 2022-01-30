@@ -30497,9 +30497,10 @@ MonoBehaviour:
   rangedEnemyPrefab: {fileID: 5543871429611398885, guid: 3b75f4aad885c33488df5f72ab4a59bc, type: 3}
   spawns: []
   enemies: []
-  totalEnemyPool: 100
+  totalEnemyPool: 50
   enemiesAllowedAtOnce: 15
   enemiesCurrentlyPresent: 0
+  chanceForRanged: 5
 --- !u!4 &1096745973
 Transform:
   m_ObjectHideFlags: 0
@@ -61870,6 +61871,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1532732383905966537, guid: a3a62d055a45bc24e822354e3e25e908, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7041236615745058870, guid: a3a62d055a45bc24e822354e3e25e908, type: 3}
       propertyPath: m_RootOrder
       value: 2
