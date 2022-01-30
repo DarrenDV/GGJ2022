@@ -66,8 +66,24 @@ public class PlayerHealth : MonoBehaviour
 
             //Lerp To Killer
             StartCoroutine(LerpToKiller(killer));
+
+            //Stop all current bullets
+            DestroyAllActiveBullets();
         }
     }
+
+    void DestroyAllActiveBullets()
+    {
+        List<GameObject> activeBullets = new List<GameObject>();
+        foreach (GameObject bullet in GameObject.FindGameObjectsWithTag("Bullet"))
+        {
+            activeBullets.Add(bullet);
+        }
+        foreach (GameObject activeBullet in activeBullets)
+        {
+            Destroy(activeBullet);
+        }
+    } 
 
     void StopAllEnemies()
     {

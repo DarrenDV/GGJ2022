@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   deathSoundPlayer: {fileID: 0}
-  _animator: {fileID: 0}
+  _animator: {fileID: 3380056898733733091}
   ammoPickup: {fileID: 3032020366044314721, guid: 7c07e6462b3a5a1458def928d60f5c4b, type: 3}
   oneInHowMany: 10
 --- !u!82 &7959370228976912391
