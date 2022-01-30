@@ -10,6 +10,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject ammoPickup;
     [SerializeField] private int oneInHowMany = 10;
 
+    public bool isDying;
+
     private EnemySpawning enemySpawning;
 
     // Start is called before the first frame update
@@ -30,6 +32,13 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            if(gameObject.tag == "MeleeEnemy")
+            {
+                isDying = true;
+            }
+            
+            GetComponent<CircleCollider2D>().enabled = false;
+
             if(Random.Range(0, oneInHowMany) == 1)
             {
                 GameObject.Instantiate(ammoPickup, transform.position, Quaternion.identity);

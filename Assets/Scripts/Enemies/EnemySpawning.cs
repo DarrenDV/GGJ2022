@@ -25,7 +25,7 @@ public class EnemySpawning : MonoBehaviour
 
     }
 
-    void StartInvoke()
+    public void StartInvoke()
     {
         InvokeRepeating("SpawnEnemy", 2f, 1f);
     }
